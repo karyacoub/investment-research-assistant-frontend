@@ -2,6 +2,7 @@ import React from "react";
 import { LLMApi } from "../api/LLMApi";
 import type { ILLMResponse } from "../models/LLMModel";
 import { SentimentGauge } from "../components/SentimentChart";
+import DefaultArticleIcon from "../assets/default-article-icon.jpg";
 
 export const MainPage: React.FC = () => {
     const [prompt, setPrompt] = React.useState<string>("");
@@ -18,6 +19,32 @@ export const MainPage: React.FC = () => {
                 score={response.news_highlights.sentiment_score} 
                 label={response.news_highlights.overall_sentiment} />
             : <div>Loading...</div>;
+    }
+
+    function renderArticleImage(imageUrl?: string) {
+        return imageUrl 
+            ? <img src={imageUrl} alt="Article" className="top-article__image" /> 
+            : <img src={DefaultArticleIcon as string} alt="Default Article" className="top-article__image" />;
+    }
+
+    function renderTopArticles() {
+        if (!response) return <div>Loading...</div>;
+
+        return response.news_highlights.top_articles.map((article, index) => (
+            <div key={index} className="top-article">
+
+                {renderArticleImage(article.banner_image)}
+                <a href={article.url} target="_blank" rel="noopener noreferrer" className="top-article__title">{article.title}</a>
+            </div>
+        ));
+    }
+
+    function renderSources() {
+        if (!response) return <div>Loading...</div>;
+        
+        return <>{response.sources.map((source, index) => (
+                    <h6 key={index}>{source}</h6>
+            ))}</>;
     }
 
     return <div id="main-page__container">
@@ -46,6 +73,7 @@ export const MainPage: React.FC = () => {
             <div id="main-page__cards-container">
                 <div className="card-row">
                     {/* <Card title="Symbol" value={response ? response.market_snapshot.symbol : "Loading..."} /> */}
+                    {/* TODO: Find somewhere to put the symbol */}
                 </div>
                 
                 <div id="main-page__market-snapshot-container">
@@ -69,14 +97,17 @@ export const MainPage: React.FC = () => {
                 </div>
             </div>
 
-            <div>{response ? response.news_highlights.sentiment_score : "Loading..."}</div>
-
             {renderSentimentGauge()}
 
-            {/* <div>OVERALL SENTIMENT CHART (Sentiment label and score)</div> */}
-            <div>TOP 3 ARTICLES</div>
+            <div id="main-page__top-articles-container">
+                <h5>Top Articles</h5>
+                {renderTopArticles()}
+            </div>
 
-            <div>SOURCES SECTION</div>
+            <div id="main-page__sources-container">
+                <h6>Sources: </h6>
+                {renderSources()}
+            </div>
         </div>
     </div>
 };

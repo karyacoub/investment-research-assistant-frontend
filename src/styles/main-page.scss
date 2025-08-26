@@ -96,5 +96,49 @@
                 }
             }
         }
+
+        #main-page__top-articles-container {
+            margin-top: 5%;
+
+            .top-article {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 1%;
+                padding: 1%;
+                background-color: $ai-summary-background;
+                border-radius: 4px;
+
+                &__image {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: cover;
+                    margin-right: 2%;
+                    border-radius: 4px;
+                }
+
+                &__title {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: white;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }   
+        }
+
+        #main-page__sources-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            h6 {
+                margin-left: 1%;
+                font-weight: 400;
+            }
+        }
     }
 }
