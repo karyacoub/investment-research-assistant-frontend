@@ -1,0 +1,56 @@
+@use "./colors.scss" as *;
+
+.sentiment-gauge__container {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+
+    .sentiment-gauge__header {
+        margin: 1%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        h5 {
+            margin: 1%;
+        }
+
+        .sentiment-gauge__score-label {
+            margin: 1%;
+        }
+    }
+
+    .sentiment-gauge__gauge {
+        border: 1px solid white;
+        border-radius: 4px;
+        width: 80%;
+        height: 40%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+
+        .sentiment-gauge__bar-background {
+            height: 100%;
+            background-color: white;
+            width: 1%;
+            position: absolute;
+            left: 50%;
+        }
+    }
+
+    .sentiment-gauge__labels-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+        margin-top: 1%;
+    }
+}

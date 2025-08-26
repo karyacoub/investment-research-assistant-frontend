@@ -1,0 +1,100 @@
+@use "./colors.scss" as *;
+
+#main-page__container {
+    width: 100%;
+
+    #main-page__header-container {
+        display: flex;
+        flex-direction: row;
+        margin: 1%;
+        align-items: center;
+
+        #main-page__header-logo {
+            margin: 1%;
+        }
+
+        #main-page__header-title {
+            margin: 1%;
+        }
+    }
+
+    #main-page__greeting-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #main-page__prompt-input-container {
+        width: 100%;
+
+        input {
+            width: 100%;
+            font-size: 16px;
+            padding: 1%;
+            box-sizing: border-box;
+        }
+    }
+
+    #main-page__content-container {
+        margin: 2%;
+
+        #main-page__summary-container {
+            margin-bottom: 2%;
+            padding: 1%;
+            background-color: $ai-summary-background;
+            border-radius: 4px;
+
+            h6 {
+                margin: 1%;
+            }
+             #main-page__summary {
+                padding: 1%;
+             }
+        }
+
+        #main-page__cards-container {
+            #main-page__market-snapshot-container {
+                #main-page__open-close-pvol-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    padding: 1%;
+
+                    #main-page__open {
+                        border-right: 1px solid #ccc;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    #main-page__close {
+                        border-right: 1px solid #ccc;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    #main-page__pvol {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+
+                #main-page__date-container {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+
+                }
+            }
+        }
+    }
+}

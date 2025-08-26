@@ -1,0 +1,10 @@
+@use "./main-page.scss";
+@use "./sentiment-gauge.scss";
+@use "./colors.scss" as *;
+
+body {
+    margin: 3%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    background-color: $background;
+}
