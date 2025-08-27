@@ -18,8 +18,8 @@ export const SentimentGauge: React.FC<SentimentGaugeProps> = (props: SentimentGa
 
     let styles: React.CSSProperties = {
       width: `${barWidth}%`,
-      borderTopLeftRadius: props.score >= 0 ? 0 : 4,
-      borderBottomLeftRadius: props.score >= 0 ? 0 : 4,
+      borderTopLeftRadius: props.score < 0 ? 4 : 0,
+      borderBottomLeftRadius: props.score < 0 ? 4 : 0,
       borderTopRightRadius: props.score >= 0 ? 4 : 0,
       borderBottomRightRadius: props.score >= 0 ? 4 : 0,
     };
@@ -37,7 +37,7 @@ export const SentimentGauge: React.FC<SentimentGaugeProps> = (props: SentimentGa
       <div className="sentiment-gauge__header">
           <h5>Overall Sentiment</h5>
           <div className="sentiment-gauge__score-label">
-              <span>{props.label} ({props.label})</span>
+              <span>{props.label} ({Number(props.score).toFixed(2)})</span>
           </div>
       </div>
       <div className="sentiment-gauge__gauge">

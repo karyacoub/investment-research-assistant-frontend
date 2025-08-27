@@ -11,6 +11,20 @@
 
         #main-page__header-logo {
             margin: 1%;
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+
+            img {
+                width: 90%;
+                height: 90%;
+                object-fit: contain;
+                padding: 1%;
+            }
         }
 
         #main-page__header-title {
@@ -26,13 +40,34 @@
     }
 
     #main-page__prompt-input-container {
-        width: 100%;
-
-        input {
+        form{
             width: 100%;
-            font-size: 16px;
-            padding: 1%;
-            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            input {
+                font-size: 16px;
+                padding: 1%;
+                box-sizing: border-box;
+                width: 90%;
+
+                &:disabled {
+                    color: rgb(220, 220, 220);
+                }
+            }
+
+            button {
+                font-size: 16px;
+                padding: 1%;
+                box-sizing: border-box;
+                margin-left: 1%;
+                width: 10%;
+
+                &:disabled {
+                    color: rgb(220, 220, 220);
+                }
+            }
         }
     }
 
@@ -60,6 +95,15 @@
                     flex-direction: row;
                     justify-content: space-around;
                     padding: 1%;
+
+                    #main-page__symbol {
+                        border-right: 1px solid #ccc;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
 
                     #main-page__open {
                         border-right: 1px solid #ccc;
@@ -140,5 +184,14 @@
                 font-weight: 400;
             }
         }
+    }
+
+    #main-page__no-content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5%;
+        text-align: center;
     }
 }
