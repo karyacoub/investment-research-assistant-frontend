@@ -1,4 +1,4 @@
-# Investment Research Assistant (IRA) Backend
+# Investment Research Assistant (IRA) Frontend
 An LLM-driven asssitant that helps you invest smarter.
 
 ## Prerequisites
