@@ -56,7 +56,7 @@ export const MainPage: React.FC = () => {
     }
 
     function renderTopArticles() {
-        if (!response || (response && response.news_highlights?.top_articles.length === 0)) {
+        if (!response?.news_highlights?.top_articles?.length) {
             return <div>-</div>;
         } 
 
@@ -116,23 +116,23 @@ export const MainPage: React.FC = () => {
                     <div id="main-page__open-close-pvol-container">
                         <div id="main-page__symbol">
                             <h5>Symbol</h5>
-                            {response && response.market_snapshot ? response.market_snapshot.symbol : "-"}
+                            {(response && response.market_snapshot) ? response.market_snapshot.symbol : "-"}
                         </div>
                         <div id="main-page__open">
                             <h5>Open</h5>
-                            {response && response.market_snapshot ? getCurrencyString(response.market_snapshot.open) : "-"}
+                            {(response && response.market_snapshot) ? getCurrencyString(response.market_snapshot.open) : "-"}
                         </div>
                         <div id="main-page__close">
                             <h5>Close</h5>
-                            {response && response.market_snapshot ? getCurrencyString(response.market_snapshot.close) : "-"}
+                            {(response && response.market_snapshot) ? getCurrencyString(response.market_snapshot.close) : "-"}
                         </div>
                         <div id="main-page__pvol">
                             <h5>Purchase Volume</h5>
-                            {response && response.market_snapshot ? FormattingUtils.formatNumberWithCommas(response.market_snapshot.volume) : "-"}
+                            {(response && response.market_snapshot) ? FormattingUtils.formatNumberWithCommas(response.market_snapshot.volume) : "-"}
                         </div>
                     </div>
                     <div id="main-page__date-container">
-                        <h5>As of {response && response.market_snapshot ? response.market_snapshot.date : "-"}</h5>
+                        <h5>As of {(response && response.market_snapshot) ? response.market_snapshot.date : "-"}</h5>
                     </div>
                 </div>
             </div>
