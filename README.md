@@ -23,4 +23,5 @@ An LLM-driven asssitant that helps you invest smarter.
 ## Samples
 > **Note**: These video samples were edited down to a shorter length for demostration purposes. Typically, the local LLM takes 45 - 60 seconds to respond on my M4 Macbook, but YMMV.
 
-![Nvidia Prompt (split)](https://github.com/user-attachments/assets/f52e0201-ed65-4cb5-9427-bce0588e6416)
+![Nvidia Prompt Sample](https://github.com/user-attachments/assets/f52e0201-ed65-4cb5-9427-bce0588e6416)
+![AMD-Nvidia Prompt Sample](https://github.com/user-attachments/assets/d6eb97f7-779b-4a83-bd6a-5f90a00bcde4)
